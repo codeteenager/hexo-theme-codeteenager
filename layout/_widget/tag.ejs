@@ -1,0 +1,10 @@
+<% if (site.tags.length){ %>
+  <div class="panel margin-right margin-top">
+    <div class="panel-head bg-main"><%= __('tags') %></div>
+    <div class="list-link" style="border-radius:0px;">
+        <% site.tags.sort('name').each(function(item){ %>
+          <a href="<%- url_for(item.path) %>"><%= item.name %><span class="float-right badge bg-main"><%= item.posts.length %></span></a>
+        <% }); %>
+    </div>
+  </div>
+<% } %>

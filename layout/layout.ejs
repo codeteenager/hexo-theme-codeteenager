@@ -1,0 +1,37 @@
+<%- partial('_partial/head') %>
+
+  <body>
+    <div class="layout">
+      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+
+        <div class="keypoint bg-green bg-inverse text-center">
+          <h1>
+            欢迎来到我的博客</h1>
+          <p>
+              嗨，我是姜帅杰 (codeteenager)，一名来自中国的 android/ios/web 开发者。正在修行，探求创意之源。</p>
+          <a class="button button-big bg-blue radius-rounded" href="http://www.github.com/codeteenager" target="_blank">
+            Github
+          </a>
+          <a class="button button-big bg-blue radius-rounded margin-left" href="http://www.jiangshuaijie.com" target="_blank">
+            个人简历
+          </a>
+        </div>
+        <div class="line-big">
+          <div class="xs9">
+            <section class="margin">
+              <%- body %>
+            </section>
+          </div>
+          <div class="xs3">
+            <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+              <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+                <% } %>
+          </div>
+        </div>
+        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+          <!-- <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+        <%- partial('_partial/after-footer') %> -->
+    </div>
+  </body>
+
+  </html>

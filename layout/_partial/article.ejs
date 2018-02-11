@@ -1,0 +1,51 @@
+<article class="margin" itemscope itemprop="blogPost">
+  <%- partial('post/category') %>
+  <div class="panel" style="border-radius:0px">
+    <%- partial('post/gallery') %>
+      <% if (post.link || post.title){ %>
+        <header class="panel-head">
+          <%- partial('post/title') %>
+        </header>
+        <% } %>
+          <div class="panel-body" itemprop="articleBody" style="overflow:hidden">
+            <% if (post.excerpt && index){ %>
+              <%- post.excerpt %>
+                <% if (theme.excerpt_link){ %>
+                    <div class="container-layout clearfix">
+                        <%- partial('post/date', {date_format: null}) %>
+                        <a class="button bg-main radius-rounded float-right" href="<%- url_for(post.path) %>#more">
+                          <%= theme.excerpt_link %>
+                        </a>
+                    </div>
+                  <% } %>
+                    <% } else { %>
+                      <%- post.content %>
+                      <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div>
+                        <% } %>
+          </div>
+          <footer class="panel-foot clearfix">
+            <% if (post.comments && config.disqus_shortname){ %>
+              <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">
+                <%= __('comment') %>
+              </a>
+              <% } %>
+              <%- partial('post/tag') %>
+          </footer>
+  </div>
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+      <% } %>
+</article>
+
+<% if (!index && post.comments && config.changyan){ %>
+  <section id="comments" class="margin">
+    <div id="SOHUCS"></div>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+    <script type="text/javascript">
+      window.changyan.api.config({
+        appid: 'cytsiKqIU',
+        conf: 'prod_4e32b252aab1476fc86a09c9f8211d9b'
+      });
+    </script>
+  </section>
+  <% } %>

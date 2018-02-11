@@ -1,0 +1,11 @@
+<% if (post.categories && post.categories.length){ %>
+  <ul class="bread bg-green bg-inverse" style="margin-bottom:0px;border-radius:0px">
+    <%
+      var cats = [];
+      post.categories.forEach(function(cat){
+          cats.push('<li><a  href="' + config.root + cat.path + '">' + cat.name + '</a></li>');
+      });
+    %>
+    <%- cats.join('') %>
+  </ul>
+  <% } %>

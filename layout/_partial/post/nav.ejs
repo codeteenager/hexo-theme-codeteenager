@@ -1,0 +1,22 @@
+<% if (post.prev || post.next){ %>
+  <ul class="pager margin clearfix border-main">
+    <% if (post.prev){ %>
+      <li class="float-left">
+        <a href="<%- url_for(post.prev.path) %>">
+            <% if (post.prev.title){ %>
+              <%= post.prev.title %>
+                <% } else { %>
+                  (no title)
+                  <% } %>
+        </a>
+      </li>
+      <% } %>
+        <% if (post.next){ %>
+          <li class="float-right">
+            <a href="<%- url_for(post.next.path) %>">
+                <%= post.next.title %>
+            </a>
+          </li>
+          <% } %>
+  </ul>
+  <% } %>

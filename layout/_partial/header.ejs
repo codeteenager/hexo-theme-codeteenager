@@ -1,0 +1,45 @@
+<div class="layout bg-gray bg-inverse hidden-l">
+  <div class="container height-big">
+    <span class="float-right">
+        <a href="#" class="win-homepage icon-home">设为首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="win-favorite icon-star">加入收藏</a>
+    </span>
+    <%= config.title %>
+  </div>
+</div>
+<div class="container padding-big-top padding-big-bottom bg-white">
+  <div class="line">
+    <div class="xl12 xs2 xm2 xb1">
+      <button class="button icon-navicon float-right" data-target="#header-demo2">
+      </button>
+      <img src="<%- theme.favicon %>" width="50" height="50" />
+    </div>
+    <div class=" xl12 xs10 xm10 xb11 padding-top nav-navicon" id="header-demo2">
+      <div class="xs8 xm8 xb8">
+        <ul class="nav nav-menu nav-inline">
+          <% for (var i in theme.menu){ %>
+            <li>
+              <a href="<%- url_for(theme.menu[i]) %>" class="text-big">
+                <strong><%= i %></strong>
+              </a>
+            </li>
+            <% } %>
+              <!-- <% if (theme.rss){ %>
+                      <li><a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="<%= __('rss_feed') %>"></a></li>
+                    <% } %> -->
+        </ul>
+      </div>
+      <div class="xs4 xm4 xb3">
+        <form>
+          <div class="input-group padding-little-top">
+            <input type="text" class="input border-main" name="keywords" size="30" placeholder="关键词" />
+            <span class="addbtn">
+              <button id="search_dialog" type="button" class="button bg-main dialogs" data-toggle="click" data-target="#mydialog" data-mask="1" data-width="50%">
+                搜索</button>
+            </span>
+          </div>  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

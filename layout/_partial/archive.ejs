@@ -1,0 +1,47 @@
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+<% } else { %>
+  <% var last; %>
+  <% page.posts.each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+        </div></section>
+      <% } %>
+      <% last = year; %>
+      <section class="panel margin">
+        <div class="panel-head">
+          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        </div>
+        <div class="panel-body">
+    <% } %>
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></section>
+  <% } %>
+<% } %>
+<% if (page.total > 1){ %>
+    <div class="line-middle">
+      <div class="x4">
+        </div>
+      <div class="x4">
+          <ul class="pagination border-main text-center">
+              <li class="<%= page.current === 1 ? 'disabled' : '' %>">
+                  <a href="<%- config.root %><%- page.prev_link %>">上一页</a>
+              </li>
+                <% for (var i = 1; i <= page.total; i++) { %>
+                  <li class="<%= page.current == i ? 'active':'' %>"><a href="<%= i == 1 ? '/' : '/page/' + i %>"><%= i %></a></li>
+                <% } %>
+                <li class="<%= page.next_link === '' ? 'disabled' : '' %>">
+                  <a href="<%- config.root %><%- page.next_link %>">下一页</a>
+              </li>
+            </ul>
+        </div>
+      <div class="x4">
+        </div>
+    </div>
+    
+<% } %>

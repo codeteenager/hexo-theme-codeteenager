@@ -1,0 +1,41 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <!-- <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div> -->
+  <div class="container-layout bg-gray bg-inverse padding-big-top padding-big-bottom margin-top">
+    <div class="table-responsive padding hidden-l">
+        <ul class="nav nav-sitemap">
+            <li><a href="#">友情链接</a>
+                <ul>
+                    <li><a href="https://developer.android.com/">Android Developer</a></li>
+                    <li><a href="https://www.kotlincn.net/">Kotlin中文网</a></li>
+                    <li><a href="https://developer.apple.com/">Apple Developer</a></li>
+                </ul>
+            </li>
+            <li><a href="#">微信公众号</a>
+                <img width="128" height="128" src="<%- theme.qrcode %>" class="img-border border-blue radius-big" />
+            </li>
+            <li><a href="#">联系方式</a> 
+                <ul>
+                    <li>QQ：1830702951</li>
+                    <li>微信：codeteenager</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="text-center">
+        版权所有 © jiangshuaijie.com All Rights Reserved，京ICP备17065332号</div>
+</div>
+</footer>
+<%- partial('plugin/main_javascript') %>
+<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytsiKqIU"></script>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->

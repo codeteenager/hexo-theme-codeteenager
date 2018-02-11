@@ -1,0 +1,8 @@
+<% if (site.tags.length){ %>
+  <div class="panel margin-right margin-top">
+    <div class="panel-head bg-main"><%= __('tagcloud') %></div>
+    <div class="panel-body">
+      <%- tagcloud() %>
+    </div>
+  </div>
+<% } %>

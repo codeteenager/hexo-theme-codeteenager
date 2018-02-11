@@ -1,0 +1,10 @@
+<% if (site.posts.length){ %>
+  <div class="panel margin-right margin-top">
+    <div class="panel-head bg-main"><%= __('recent_posts') %></div>
+    <div class="list-link" style="border-radius:0px;">
+        <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+            <a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+        <% }) %>
+    </div>
+  </div>
+<% } %>
