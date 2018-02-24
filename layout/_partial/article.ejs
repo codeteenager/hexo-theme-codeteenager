@@ -7,7 +7,7 @@
           <%- partial('post/title') %>
         </header>
         <% } %>
-          <div class="panel-body" itemprop="articleBody" style="overflow:hidden">
+          <div class="panel-body" itemprop="articleBody">
             <% if (post.excerpt && index){ %>
               <%- post.excerpt %>
                 <% if (theme.excerpt_link){ %>
@@ -19,8 +19,11 @@
                     </div>
                   <% } %>
                     <% } else { %>
-                      <%- post.content %>
-                      <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div>
+                      <div class="entry">
+                        <%- post.content %>
+                      </div>
+                      
+                      <!-- <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div> -->
                         <% } %>
           </div>
           <footer class="panel-foot clearfix">

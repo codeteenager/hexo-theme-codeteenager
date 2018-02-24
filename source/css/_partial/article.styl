@@ -1,0 +1,93 @@
+article
+    .entry
+        font-size 16px
+        line-height 1.7
+        @media (max-width: 480px)
+            line-height 1.5em
+
+        p
+            margin-top 0
+            margin-bottom 1em
+            text-align justify
+            text-justify inter-ideograph
+            word-break initial
+            word-break break-word
+
+            &:last-child
+                margin-bottom 0
+
+        ul, ol
+            margin-bottom 1em
+            ul, ol
+                margin-bottom 0
+
+        h1, h2, h3, h4, h5, h6
+            margin-top 0
+            margin-bottom 0.5em
+
+        h1
+            font-size 1.6em
+            color color-entry-subtitle
+
+        h2
+            font-size 1.4em
+            color color-entry-subtitle
+
+        h3, h4, h5, h6
+            font-size 1.2em
+            color color-entry-subtitle
+
+          &.nstyle
+            border-radius 0
+            padding 0
+            background none
+            box-shadow none
+
+        iframe
+            max-width 98%
+
+        .caption
+            display block
+            margin-top 5px
+            color #aaa
+            position relative
+            font-size 0.9em
+            padding-left 25px
+            &:before
+                content '\f040'
+                position absolute
+                font 1.3em font-icon
+                position absolute
+                left 0
+                top 3px
+        img,video,figure img
+            max-width 100%
+            height auto
+            vertical-align middle
+            padding-top 0.5em
+            @media tablet 
+                padding-top 0.7em
+        table
+            max-width 100%
+            border-collapse collapse
+            border-spacing 0
+            margin-top: 1em
+            th
+                font-weight bold
+                padding 0.5em
+                line-height: 1.3em
+            td 
+                padding 0.5em
+                line-height: 1.3em
+         .highlight
+            background #2d2d2d
+            margin 0.5em 0
+            padding 0.5em 2%
+            color #ccc
+            line-height 1.5
+            font-size 0.95em
+            -webkit-border-radius 0.35em
+            border-radius 0.35em
+            word-wrap break-word
+            overflow auto
+
